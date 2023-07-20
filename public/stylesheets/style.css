@@ -1,8 +1,49 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
+
+.message {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.534);
+  padding: 2rem 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  gap: 1rem;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+}
+
+.message-user {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.message-added {
+  color: rgb(180, 180, 180);
+}
+
+.message-added:hover {
+  color: black;
+}
+
+.message > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+/* .message-text {
+  padding-left: 1rem;
+} */
