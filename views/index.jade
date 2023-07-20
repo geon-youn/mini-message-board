@@ -4,10 +4,10 @@ block content
   h1 Mini Message Board
   p Welcome! 
 
-  ul(class="messages")
+  ul.messages
     each msg, i in messages 
-      li(class="message")
+      li.message
         div
-          div(class="message-user")=msg.user
-          div(class="message-added")=msg.added
-        div(class="message-text")=msg.text
+          div.message-user=msg.user
+          div.message-added=msg.added
+        div.message-text=msg.text
