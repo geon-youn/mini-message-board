@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+  form(action="/new", method="post")
+    .author-name-input.input-field
+      label(for="author-name") Name
+      input#author-name(type="text", placeholder="Your Name")
+    .message-input.input-field
+      label(for="message") Message
+      input#message(type="text", placeholder="Your Message")
+    button(type="submit") Send Message
