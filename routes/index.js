@@ -16,7 +16,7 @@ const messages = [
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express', messages });
+  res.render('index', { messages });
 });
 
 router.post('/new', function (req, res, next) {
