@@ -19,4 +19,9 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express', messages });
 });
 
+router.post('/new', function (req, res, next) {
+  messages.push(textMessage(req.body.message, req.body.author, new Date()));
+  res.redirect('/');
+});
+
 module.exports = router;
