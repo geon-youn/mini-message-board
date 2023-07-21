@@ -73,3 +73,31 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif; 
+}
+
+textarea {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+.input-field > label {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.637);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+form > button {
+  height: 2.5rem;
+}
