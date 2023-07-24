@@ -1,26 +1,31 @@
 const express = require('express');
 const router = express.Router();
 
-const textMessage = (text, user, added) => {
-  return {
-    text,
-    user,
-    added,
-  };
-};
+require('dotenv').config();
 
-const messages = [
-  textMessage('Hi There!', 'Amando', new Date()),
-  textMessage('Hello World!', 'Charles', new Date()),
-];
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
+const mongoDB = process.env.mongoDB;
+const Message = require('../models/message');
+let messages;
+
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
+  messages = await Message.find();
   res.render('index', { messages });
 });
 
 router.post('/new', function (req, res, next) {
-  messages.push(textMessage(req.body.message, req.body.author, new Date()));
+  Message.create({
+    text: req.body.message,
+    author: req.body.author,
+    added: new Date(),
+  });
   res.redirect('/');
 });
 
