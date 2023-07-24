@@ -7,17 +7,6 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const newRouter = require('./routes/new');
 
-require('dotenv').config();
-
-const mongoose = require('mongoose');
-mongoose.set('strictQuery', false);
-const mongoDB = process.env.mongoDB;
-
-main().catch((err) => console.log(err));
-async function main() {
-  await mongoose.connect(mongoDB);
-}
-
 const app = express();
 
 // view engine setup
